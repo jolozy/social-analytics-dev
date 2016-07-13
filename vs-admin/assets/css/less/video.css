@@ -1,0 +1,33 @@
+.reset-search-btn {
+  height: 40px;
+}
+.videos .tab-content {
+  background-color: #EFF1F2;
+}
+.js-video-tabs li.active > a {
+  background-color: #EFF1F2;
+}
+.js-video-tabs li.active > a:hover {
+  background-color: #EFF1F2;
+}
+.media-progress-bar {
+  display: none;
+}
+.media-description-container {
+  padding: 20px;
+  min-height: 200px;
+  text-align: center;
+}
+.media-item-container {
+  word-wrap: break-word;
+  background: #F9F9F9;
+}
+.media-item-container span {
+  font-size: 0.8em;
+}
+.media-item-container:hover {
+  background: #f2f2f2;
+}
+.delete-media-btn {
+  cursor: pointer;
+}

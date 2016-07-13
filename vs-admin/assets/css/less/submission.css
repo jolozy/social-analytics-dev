@@ -1,0 +1,15 @@
+.display-pic-placeholder {
+  height: 77px;
+  background: #D8DBDE;
+  text-align: center;
+  padding-top: 22px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  color: #eeeeee;
+}
+.fasttrack {
+  background-color: #0085d8 !important;
+}
+.reviewed {
+  cursor: pointer;
+}

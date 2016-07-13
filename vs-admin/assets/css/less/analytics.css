@@ -1,0 +1,182 @@
+.analytics-pivot:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.panel-stat > .panel-heading {
+  min-height: 135px;
+}
+.panel-overall > .panel-heading {
+  margin-left: 10px;
+}
+.table-interactions > thead > tr > th {
+  padding: 0px;
+}
+.stats-heading-container {
+  padding-left: 12px;
+}
+.stats-title {
+  margin-bottom: 0px !important;
+}
+.stats-number {
+  margin-top: 0px;
+}
+.stats-container {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 3px;
+}
+.stats-container .panel {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.tracker-table {
+  text-align: center;
+  color: black;
+  border-radius: 3px;
+  padding-bottom: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.sub-tracker-container {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.desktop-container {
+  border-radius: 3px 0px 0px 3px;
+}
+.mobile-container {
+  border-radius: 0px 3px 3px 0px;
+}
+.tracker-row {
+  background-color: #ffffff;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  height: 40px;
+}
+.tracker-row.total {
+  background-color: #b9b9b9;
+}
+.tracker-row.mobile-row {
+  background-color: transparent;
+}
+.tracker-name-container {
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 100%;
+  padding-top: 10px;
+}
+.tracker-name-container.mobile-row {
+  background-color: #ffffff;
+  border-radius: 3px 0px 0px 3px;
+  padding: 0px;
+}
+.tracker-name-container.mobile-row > .overlay {
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 100%;
+  padding-top: 10px;
+  border-radius: 3px 0px 0px 3px;
+}
+.tracker-value-container {
+  margin-top: 10px;
+}
+.tracker-value-container.invisible-row {
+  background-color: transparent;
+  margin-top: 0px;
+  padding-top: 10px;
+  height: 100%;
+}
+.tracker-value-container.visible-row {
+  background-color: #ffffff;
+  margin-top: 0px;
+  padding-top: 10px;
+  height: 100%;
+  border-radius: 0px 3px 3px 0px;
+}
+.panel-heading.growth {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.panel-stat.copy-to-clipboard:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.tracker-value-container:hover {
+  color: #D4145A;
+  cursor: pointer;
+}
+.js-analytics-grid td {
+  cursor: pointer;
+}
+.tracker-modal-container .modal-dialog {
+  width: 800px;
+}
+.tracker-modal-container .modal-dialog .panel-body {
+  background-color: #F1F1F1;
+}
+.modal-overall-trends .modal-dialog {
+  width: 800px;
+}
+.ct-line {
+  stroke-width: 2px !important;
+}
+.ct-point {
+  opacity: 0;
+}
+.ct-series-a path,
+.ct-series-a line {
+  stroke: #1D2939 !important;
+}
+.ct-series-b path,
+.ct-series-b line {
+  stroke: #D84078 !important;
+}
+.ct-series-c path,
+.ct-series-c line {
+  stroke: #CC181E !important;
+}
+.ct-series-d path,
+.ct-series-d line {
+  stroke: #44BBFF !important;
+}
+.ct-series-e path,
+.ct-series-e line {
+  stroke: #500095 !important;
+}
+.video-trend-container {
+  text-align: center;
+}
+table > tr.extra-row > td {
+  height: 400px;
+}
+.close-trend {
+  text-align: right;
+  padding-right: 13px;
+  width: 30px;
+  margin-left: auto;
+  margin-right: 0;
+}
+.content-table > div {
+  text-align: center;
+}
+#published_countries td,
+#submitted_countries td,
+#referrals td,
+#processed_approved_referrals td,
+#processed_countries td,
+#published_countries th,
+#submitted_countries th,
+#referrals th,
+#processed_approved_referrals th,
+#processed_countries th {
+  width: 100%;
+  text-align: center;
+}
+.tab-content,
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  background-color: #EFF1F2;
+}

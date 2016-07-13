@@ -1,0 +1,20 @@
+.user-search-table {
+  width: 100%;
+  border: 1px solid black;
+}
+.user-search-table td {
+  border: 1px solid black;
+  padding: 5px;
+}
+.user-search-table th {
+  border: 1px solid black;
+  padding: 5px;
+}
+.user-search-buttons > div {
+  float: right;
+}
+.num-of-users {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}

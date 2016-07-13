@@ -1,0 +1,290 @@
+.unpublished {
+  color: red;
+}
+textarea {
+  border: 1px solid #bdc7d8;
+  margin: 0;
+  padding: 3px;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+}
+textarea {
+  font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+  font-size: 11px;
+}
+textarea {
+  width: 100%;
+}
+textarea {
+  -webkit-appearance: textarea;
+  background-color: white;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-repeat: initial;
+  -webkit-rtl-ordering: logical;
+  -webkit-user-select: text;
+  flex-direction: column;
+  cursor: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  border: 1px solid;
+  padding: 2px;
+}
+.postMessage > p:hover,
+.postName > span:hover,
+.postDescription > span:hover {
+  background-color: #ff9;
+  cursor: pointer;
+}
+.videoDomain {
+  text-transform: uppercase;
+  color: #9197a3;
+  font-size: 11px;
+  line-height: 11px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: helvetica, arial, sans-serif;
+  margin-top: 10px;
+}
+.postData {
+  margin-top: 3px;
+}
+.bottomWrapper {
+  margin-left: 5px;
+  margin-top: 5px;
+}
+.postMessage {
+  font-family: helvetica, arial, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1.38;
+  overflow: hidden;
+}
+.postName {
+  font-family: Georgia, 'lucida grande', tahoma, verdana, arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  margin-bottom: 5px;
+  max-height: 110px;
+  overflow: hidden;
+  word-wrap: break-word;
+  text-decoration: none;
+  -webkit-transition: color 0.1s ease-in-out;
+}
+.postName > span,
+.postMessage > p,
+.postDescription > span {
+  color: #141823;
+}
+.postDescription {
+  font-family: helvetica, arial, sans-serif;
+  line-height: 16px;
+  max-height: 80px;
+  font-size: 12px;
+  overflow: hidden;
+}
+.icon {
+  background-repeat: no-repeat;
+  position: relative;
+  display: inline-block;
+}
+.icon.downArrow {
+  background-size: 305px 156px;
+  background-position: -27px -134px;
+  height: 20px;
+  width: 20px;
+}
+.icon.downArrow .clear {
+  clear: both;
+}
+.icon.downArrow html,
+.icon.downArrow body {
+  background: #e9eaed;
+  padding: 12px;
+  font-family: Helvetica, Arial, 'lucida grande', tahoma, verdana, arial, sans-serif;
+}
+.icon.downArrow html .container,
+.icon.downArrow body .container {
+  width: 516px;
+  margin: auto;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.icon.downArrow html .container .post,
+.icon.downArrow body .container .post {
+  border: 1px solid;
+  border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+  -webkit-border-radius: 3px;
+  font-size: 12px;
+  line-height: 1.38;
+  vertical-align: middle;
+  padding: 12px;
+  background: #FFF;
+  margin-bottom: 12px;
+}
+.icon.downArrow html .container .post a,
+.icon.downArrow body .container .post a {
+  color: #3b5998;
+  text-decoration: none;
+}
+.icon.downArrow html .container .post a.important,
+.icon.downArrow body .container .post a.important {
+  font-weight: bold;
+}
+.icon.downArrow html .container .post .content,
+.icon.downArrow body .container .post .content {
+  padding-bottom: 9px;
+  margin-bottom: 12px;
+}
+.icon.downArrow html .container .post .content .head,
+.icon.downArrow body .container .post .content .head {
+  height: 40px;
+  margin-bottom: 11px;
+}
+.icon.downArrow html .container .post .content .head .profPic,
+.icon.downArrow body .container .post .content .head .profPic {
+  float: left;
+  width: 40px;
+  height: 40px;
+  display: block;
+  background: url("https://fbcdn-profile-a.akamaihd.net/hprofile-ak-frc3/t1.0-1/c33.4.48.48/p56x56/542867_103656283101789_1720867095_n.jpg");
+}
+.icon.downArrow html .container .post .content .head .topic,
+.icon.downArrow body .container .post .content .head .topic {
+  margin-top: 2px;
+  margin-left: 12px;
+  float: left;
+  display: inline-block;
+  vertical-align: middle;
+}
+.icon.downArrow html .container .post .content .head .topic .pageName,
+.icon.downArrow body .container .post .content .head .topic .pageName {
+  font-size: 14px;
+  font-weight: bold;
+}
+.icon.downArrow html .container .post .content .head .topic .postData,
+.icon.downArrow body .container .post .content .head .topic .postData {
+  color: #9197a3;
+}
+.icon.downArrow html .container .post .content .head .postMenu,
+.icon.downArrow body .container .post .content .head .postMenu {
+  display: block;
+  float: right;
+  text-align: right;
+  vertical-align: top;
+}
+.icon.downArrow html .container .post .content .head .postMenu .icon,
+.icon.downArrow body .container .post .content .head .postMenu .icon {
+  vertical-align: top;
+  right: -4px;
+}
+.icon.downArrow html .container .post .content .body .postContent p,
+.icon.downArrow body .container .post .content .body .postContent p {
+  font-size: 14px;
+  margin: 6px 0;
+}
+.icon.downArrow html .container .post .content .body,
+.icon.downArrow body .container .post .content .body {
+  color: #6d84b4;
+  margin-top: 10px;
+}
+.icon.downArrow html .container .post .content .body a,
+.icon.downArrow body .container .post .content .body a {
+  color: #6d84b4;
+}
+.clear {
+  clear: both;
+}
+html,
+body {
+  background: #e9eaed;
+  font-family: Helvetica, Arial, 'lucida grande', tahoma, verdana, arial, sans-serif;
+}
+html .container,
+body .container {
+  width: 516px;
+  margin: auto;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+html .container .post,
+.container .post {
+  border: 1px solid;
+  border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+  -webkit-border-radius: 3px;
+  font-size: 12px;
+  line-height: 1.38;
+  vertical-align: middle;
+  padding: 12px;
+  background: #FFF;
+  margin-bottom: 12px;
+}
+html .container .post a,
+body .container .post a {
+  text-decoration: none;
+}
+.pageName > span {
+  color: #3b5998;
+  font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+}
+.postData {
+  color: #9197a3;
+  font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+}
+html .container .post a.important,
+body .container .post a.important {
+  font-weight: bold;
+}
+html .container .post .content .head,
+body .container .post .content .head {
+  height: 40px;
+  margin-bottom: 11px;
+}
+html .container .post .content .head .profPic,
+body .container .post .content .head .profPic {
+  float: left;
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+html .container .post .content .head .topic,
+body .container .post .content .head .topic {
+  margin-top: 2px;
+  margin-left: 10px;
+  float: left;
+  display: inline-block;
+  vertical-align: middle;
+}
+html .container .post .content .head .topic .pageName,
+body .container .post .content .head .topic .pageName {
+  font-size: 14px;
+  font-weight: bold;
+}
+html .container .post .content .head .postMenu,
+body .container .post .content .head .postMenu {
+  display: block;
+  float: right;
+  text-align: right;
+  vertical-align: top;
+}
+html .container .post .content .head .postMenu .icon,
+body .container .post .content .head .postMenu .icon {
+  vertical-align: top;
+  right: -4px;
+}
+html .container .post .content .body .postContent p,
+body .container .post .content .body .postContent p {
+  font-size: 14px;
+  margin: 6px 0;
+}
+html .container .post .content .body .postActions,
+body .container .post .content .body .postActions {
+  color: #6d84b4;
+  margin-top: 10px;
+}
+html .container .post .content .body .postActions a,
+body .container .post .content .body .postActions a {
+  color: #6d84b4;
+}

@@ -1,0 +1,354 @@
+body{
+	background: #e4e7ea;	
+}
+
+.select2-container {
+	width: 100%;
+}
+
+.btn-vs-pink {
+	background-color: #D84078;
+	border-color: #C83068;
+	color: #FFFFFF;
+}
+
+.btn-vs-pink:hover {
+	background-color: #C83068;
+	color: #FFFFFF;
+}
+
+.headerbar .topnav > ul > li > a:hover,
+.headerbar .topnav > ul > li > a:focus,
+.headerbar .topnav > ul > li.open > a,
+.headerbar .topnav > ul > li.active > a {
+	box-shadow: 0 3px 0 #D84078;
+	color: #D84078;
+	background: none;
+}
+
+.nav-bracket > li.active > a,
+.nav-bracket > li.active > a:hover,
+.nav-bracket > li.active > a:focus {
+	background-color: #D84078;
+	color: #fff;
+}
+
+.nav-bracket .children > li > a:hover,
+.nav-bracket .children > li > a:active,
+.nav-bracket .children > li > a:focus {
+	color: #E85088;
+	text-decoration: none;
+}
+
+.nav-bracket .children > li.active > a {
+	color: #E85088;
+}
+
+.itemview-video,
+.itemview-channel,
+.itemview-partner,
+.itemview-series {
+	position: relative;
+	height: 400px;
+}
+
+/*.itemview-video .photoday img,
+.itemview-channel .photoday img,
+.itemview-partner .photoday img,
+.itemview-series .photoday img{
+	height: 100px;
+}*/
+
+.itemview-video .photo-title,
+.itemview-channel .photo-title,
+.itemview-partner .photo-title,
+.itemview-series .photo-title{
+	line-height: 1.4;
+}
+
+.itemview-video .photo-details,
+.itemview-channel .photo-details,
+.itemview-partner .photo-details,
+.itemview-series .photo-details{
+	height: 180px;
+	overflow: hidden;
+}
+
+.itemview-video .publish-status,
+.itemview-channel .publish-status,
+.itemview-partner .publish-status,
+.itemview-series .publish-status  {
+	background-color: #D84078;
+	color: #FFFFFF;
+	padding: 10px 20px;
+}
+
+.itemview-video .published,
+.itemview-channel .published,
+.itemview-partner .published,
+.itemview-series .published {
+	background-color: #17a08c;
+}
+
+.itemview-video .pending,
+.itemview-channel .pending,
+.itemview-partner .pending,
+.itemview-series .pending {
+	background-color: #f0ad4e;
+}
+
+.itemview-video .moreinfo {
+	background-color: #428bca;
+}
+
+.itemview-video .incomplete {
+	background-color: #e4e7ea;
+	color: #636e7b;
+}
+
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+background-color: #428bca;
+border-color: #428bca;
+}
+
+.gallery{
+	background-color: #e4e7ea;
+	padding: 10px 0;
+}
+
+.itemview-image {
+	min-height: 165px;
+}
+
+.coverphoto{
+	width: 100%;
+	position: relative;
+	overflow:hidden;
+	background: #898989 url('../images/basic_picture_multiple.png') no-repeat center center;
+}
+
+.coverphoto:after {
+	padding-top: 56.25%;
+	display: block;
+	content: '';
+}
+
+.coverphoto img {
+	position: absolute;
+}
+
+.coverphoto > p {
+	text-align: center;
+	color: #fff;
+	font-size: 14px;
+	position: absolute;
+	top: 250px;
+	left: 50%;
+	margin-left: -50px;
+}
+
+.coverphoto > a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	position: absolute;
+}
+
+.card-new {
+	position: relative;
+	border: 4px dashed #AAA;
+	text-align: center;
+	color: #AAA;
+}
+
+.card-new:hover {
+	background: #EEE;
+	color: #555;
+	border: 4px dashed #555;
+	cursor: pointer;
+}
+
+.card-new i {
+	margin: -20px -15px;
+	height: 40px;
+	width: 30px;
+	top: 50%;
+	position: absolute;
+	font-size: 40px;
+}
+
+.video-player video {
+	width: 100%;
+}
+
+.ui-datepicker {
+	/*z-index: 100 !important;*/
+}
+
+.pagination {
+	cursor: pointer;
+}
+
+.submissions .nav-tabs li.active a, .submissions .nav-tabs li.active a:hover, .submissions .tab-content {
+	background-color: #EFF1F2;
+}
+
+.panel-body > .photoday {
+	width: 100%;
+	height: 77px;
+	overflow: hidden;
+	display: block;
+}
+
+.pageheader button {
+	background: none;
+}
+
+.capitalize {
+	text-transform: capitalize;
+}
+
+/*override bootstrap*/
+.panel-btns a:hover {
+	opacity: 1;
+}
+
+/*override gritter*/
+#gritter-notice-wrapper {
+	top: auto;
+	bottom: 20px;
+}
+
+/* Sortable CSS */
+
+body.dragging, body.dragging * {
+  cursor: move !important;
+}
+
+.dragged {
+  position: absolute;
+  opacity: 0.5;
+  z-index: 2000;
+}
+
+tr.placeholder {
+  position: relative;
+}
+tr.placeholder:before {
+	position: absolute;
+	content: "";
+	width: 0;
+	height: 0;
+	margin-top: -5px;
+	/*left: -5px;
+	top: -4px;*/
+	border: 5px solid transparent;
+	border-left-color: red;
+	border-right: none;
+}
+
+.uneditable-input input{
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+
+.img-preview {
+	width: 100%;
+}
+
+.member-gold-badge {
+	background: transparent url('../images/crown.png') no-repeat 0 0;
+	width: 20px;
+	height: 14px;
+	display: block;
+	position: absolute;
+	top: 7px;
+	left: 12px;
+}
+
+.ui-datepicker-title {
+  color: #D84078;
+}
+
+.ui-datepicker-next:hover,
+.ui-datepicker-prev:hover {
+  background-color: #D84078;
+}
+
+.ui-datepicker td a {
+  color: #A1A8AF;
+}
+
+.ui-datepicker td.ui-datepicker-current-day a,
+.ui-datepicker td a:hover {
+  background: #D84078;
+  color: #fff;
+}
+
+.table-analytics {
+	table-layout: fixed;
+}
+
+.table-analytics td {
+	overflow: hidden;
+}
+
+.table-analytics>thead>tr>th {
+  padding: 0;
+  background-color: #e4e7ea;
+}
+
+.table-subscribers>thead>tr>th {
+  padding: 0;
+  background-color: #e4e7ea;
+}
+
+.panel-stat {
+  margin-bottom: 0px;
+}
+
+.panel-overall .panel-heading {
+  background-color: #1D2939;
+  margin-right: 10px;
+}
+
+.panel-facebook .panel-heading {
+  background-color: #3B5998;
+}
+
+.panel-viddsee .panel-heading {
+  background-color: #D84078;
+}
+
+.panel-youtube .panel-heading {
+  background-color: #CC181E;
+}
+
+.panel-vimeo .panel-heading {
+  background-color: #44BBFF;
+}
+
+.panel-yahoo .panel-heading {
+  background-color: #500095;
+}
+
+.panel-ios .panel-heading {
+  background-color: #888;
+}
+
+.table-fixed {
+	table-layout: fixed;
+}
+ 
+td.word-wrap {
+	word-wrap: break-word;
+}
