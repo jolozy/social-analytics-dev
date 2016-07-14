@@ -1,8 +1,9 @@
 define(["backbone", "underscore", "jquery", "tpl!./article-template.html", "./article-collection"],
-    function(backbone, _, $, template, Articles) {
+    function(backbone, _, $, tpl, Articles) {
 
         var ArticleView = Backbone.View.extend({
-          //template: _.template(template),
+          template: _.template('tpl'),
+
           initialize: function(){
             console.log("Your view has been initialized!");
           },
@@ -14,7 +15,7 @@ define(["backbone", "underscore", "jquery", "tpl!./article-template.html", "./ar
           },
 
           renderArticles: function(){
-            var articles = new Articles();
+            var articles = new Articles({collection: Articles});
             //
           }
 

@@ -56,7 +56,7 @@
       </ul>
     </li>
 
-    <li><a id='social-analytics' href="#social-analytics"><i class="fa fa-bar-chart-o"></i> <span>Social Analytics</span></a></li>
+    <li><a href="#social-analytics"><i class="fa fa-bar-chart-o"></i> <span>Social Analytics</span></a></li>
 
     <li class="nav-parent"><a><i class="fa fa-suitcase"></i> <span>Download</span></a>
       <ul class="children">

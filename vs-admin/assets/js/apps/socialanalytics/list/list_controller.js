@@ -4,19 +4,21 @@ define(["app","moment",
         "../../../../../assets/modules/social-analytics/backbone/articles/article-collection",
         "../../../../../assets/modules/social-analytics/backbone/buzz/buzz-collection"
         /*"entities/socialanalytics"*/],
-    function(App, moment, listView, View, Articles, Buzz) {
+    function(App, moment, listView, ArticleView, Articles, Buzz) {
 
         App.module('SocialAnalytics.List', function (List, App, Backbone, Marionette, $, _) {
             // Controller
             List.Controller = {
                 listSocialAnalytics: function( start, end, filterType, searchString ){
-                  //var view = new View();
                   var myArticle = new Articles();
                   var buzzInfo = new Buzz();
+                  //var view = new ArticleView();
                   var finalArray = [];
                   var buzzInfoArray = [];
                   var articleArray = [];
                   var counter = 0;
+
+                  //counter to check if both fetches have been completed
                   function counterCheck () {
                     counter++;
                     if(counter === 2) {
@@ -39,6 +41,7 @@ define(["app","moment",
                     }
                   }
 
+                  //fetch from Mock
                   myArticle.fetch({
                     success: function (collection) {
                       articleArray = collection.models;
@@ -46,6 +49,7 @@ define(["app","moment",
                     }
                   });
 
+                  //fetch from Buzz
                   buzzInfo.fetch({
                     success: function (collection) {
                       buzzInfoArray = collection.models[0].attributes.posts.map(function (post) {
@@ -60,13 +64,9 @@ define(["app","moment",
                     }
                   });
 
-                    //render view for #social-analytics
-                    setTimeout(function(){
-                      $('#social-analytics').on('click', function() {
-                        $('#main-region').html('hello');
-                        //$('#main-region').html(view.render());
-                      });
-                    },3000);
+                  //render view
+                  $('#main-region').html('hello');
+                  //$('#main-region').html(view.render());
                 }
 
                 /*
