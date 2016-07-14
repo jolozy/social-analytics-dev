@@ -1,4 +1,35 @@
-<table>
+<thead>
+    <tr>
+        <th>Article Title</th>
+        <th>Facebook Shares</th>
+        <th>Facebook Likes</th>
+        <th>Facebook Comments</th>
+        <th>Facebook Total</th>
+        <th>Share Total</th>
+        <th>Last Updated</th>
+    </tr>
+</thead>
+<tbody>
+    <% _.each(Articles, function(article) { %>
+        <tr>
+            <td>
+                <%= article.get("title") %>
+            </td>
+            <td>
+                <%= article.get("facebook") %>
+            </td>
+            <td>
+                <%= article.get("overall") %>
+            </td>
+            <td>
+                <%= article.get("updated_at") %>
+            </td>
+        </tr>
+        <% }); %>
+</tbody>
+
+
+<!-- <table>
 
     <thead>
         <tr>
@@ -36,4 +67,4 @@
         </td>
     </tbody>
 
-</table>
+</table> -->

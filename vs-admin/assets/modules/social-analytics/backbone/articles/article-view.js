@@ -4,9 +4,9 @@ define(["backbone", "underscore", "jquery", "tpl!./article-template.html", "./ar
         var ArticleView = Backbone.View.extend({
           template: _.template('tpl'),
 
-          initialize: function(){
-            console.log("Your view has been initialized!");
-          },
+          // initialize: function(){
+          //   console.log("Your view has been initialized!");
+          // },
 
           render: function(){
             //this.$el.html("your view is showing now!");

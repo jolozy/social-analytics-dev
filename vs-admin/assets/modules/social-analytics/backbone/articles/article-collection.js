@@ -6,7 +6,7 @@ define(["backbone", "underscore", "./article-model"],
             model: Article,
             url: 'http://demo4828724.mockable.io/articles'
         });
-        
+
         return Articles;
 
     });
