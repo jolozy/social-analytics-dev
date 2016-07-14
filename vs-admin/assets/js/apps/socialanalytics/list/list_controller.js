@@ -5,7 +5,6 @@ define(["app","moment",
         "../../../../../assets/modules/social-analytics/backbone/buzz/buzz-collection"
         /*"entities/socialanalytics"*/],
     function(App, moment, listView, ArticleView, Articles, Buzz) {
-      console.log(ArticleView); //returns undefined
 
         App.module('SocialAnalytics.List', function (List, App, Backbone, Marionette, $, _) {
             // Controller
@@ -13,7 +12,8 @@ define(["app","moment",
                 listSocialAnalytics: function( start, end, filterType, searchString ){
                   var myArticle = new Articles();
                   var buzzInfo = new Buzz();
-                  //var view = new ArticleView(); //cannot instantiate because ArticleView is not a constructor
+                  //var view = new ArticleView();
+                  //console.log(view);
                   var finalArray = [];
                   var buzzInfoArray = [];
                   var articleArray = [];
@@ -37,7 +37,7 @@ define(["app","moment",
                             return temp;
                           }
                         }
-                      })
+                      });
                       console.log(finalArray);
                     }
                   }
@@ -68,6 +68,7 @@ define(["app","moment",
                   //render view
                   $('#main-region').html('hello');
                   //$('#main-region').html(view.render());
+
                 }
 
                 /*

@@ -2,22 +2,17 @@ define(["backbone", "underscore", "jquery", "tpl!./article-template.html", "./ar
     function(backbone, _, $, tpl, Articles) {
 
         var ArticleView = Backbone.View.extend({
-          template: _.template('tpl'),
+          template: _.template('tpl'), //returns Uncaught TypeError: text.replace is not a function
 
-          // initialize: function(){
-          //   console.log("Your view has been initialized!");
-          // },
-
-          render: function(){
-            //this.$el.html("your view is showing now!");
-            this.$el.html(this.template);
-            return ArticleView;
+          initialize: function(){
+            this.render;
           },
 
-          renderArticles: function(){
-            var articles = new Articles({collection: Articles});
-            //
+          render: function(){
+            this.$el.html(this.template);
+            return this;
           }
 
         });
+        return ArticleView;
     });

@@ -2,7 +2,6 @@
     <tr>
         <th>Article Title</th>
         <th>Facebook Shares</th>
-        <th>Facebook Likes</th>
         <th>Facebook Comments</th>
         <th>Facebook Total</th>
         <th>Share Total</th>
@@ -10,61 +9,26 @@
     </tr>
 </thead>
 <tbody>
-    <% _.each(Articles, function(article) { %>
+    <% for (var i = 0; i < finalArray.length; i++) { %>
         <tr>
             <td>
-                <%= article.get("title") %>
+                <%= finalArray[i].article.title %>
             </td>
             <td>
-                <%= article.get("facebook") %>
+                <%= finalArray[i].article.facebook.shares %>
             </td>
             <td>
-                <%= article.get("overall") %>
+                <%= finalArray[i].article.facebook.comments %>
             </td>
             <td>
-                <%= article.get("updated_at") %>
+                <%= finalArray[i].article.facebook.shares + finalArray[i].article.facebook.comments %>
+            </td>
+            <td>
+                <%= finalArray[i].article.overall.shares %>
+            </td>
+            <td>
+                <%= finalArray[i].article.updated_at %>
             </td>
         </tr>
-        <% }); %>
+        <% }; %>
 </tbody>
-
-
-<!-- <table>
-
-    <thead>
-        <tr>
-            <th>Article Title</th>
-            <th>Facebook Shares</th>
-            <th>Facebook Likes</th>
-            <th>Facebook Comments</th>
-            <th>Facebook Total</th>
-            <th>Share Total</th>
-            <th>Last Updated</th>
-        </tr>
-    </thead>
-
-    <tbody>
-        <td>
-            <%= title %>
-        </td>
-        <td>
-            <%= facebook_shares %>
-        </td>
-        <td>
-            <%= facebook_likes %>
-        </td>
-        <td>
-            <%= facebook_comments %>
-        </td>
-        <td>
-            <%= facebook_total %>
-        </td>
-        <td>
-            <%= share_total %>
-        </td>
-        <td>
-            <%= last_updated %>
-        </td>
-    </tbody>
-
-</table> -->
