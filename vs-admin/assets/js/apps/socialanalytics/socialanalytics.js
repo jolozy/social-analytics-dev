@@ -19,7 +19,7 @@ define(["app",
             };
 
             App.on('socialAnalytics:list', function() {
-                App.navigate('social-analytics');
+                App.navigate('social-analytics', true);
                 API.listSocialAnalytics();
             });
 

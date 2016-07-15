@@ -12,8 +12,7 @@ define(["app","moment",
                 listSocialAnalytics: function( start, end, filterType, searchString ){
                   var myArticle = new Articles();
                   var buzzInfo = new Buzz();
-                  //var view = new ArticleView();
-                  //console.log(view);
+                  var view = new ArticleView();
                   var finalArray = [];
                   var buzzInfoArray = [];
                   var articleArray = [];
@@ -39,6 +38,7 @@ define(["app","moment",
                         }
                       });
                       console.log(finalArray);
+                      view.render(finalArray); //renders ArticleView
                     }
                   }
 
@@ -64,10 +64,6 @@ define(["app","moment",
                       counterCheck();
                     }
                   });
-
-                  //render view
-                  $('#main-region').html('hello');
-                  //$('#main-region').html(view.render());
 
                 }
 
