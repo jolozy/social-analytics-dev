@@ -4,14 +4,14 @@ define(["app","moment",
         "../../../../../assets/modules/social-analytics/backbone/articles/article-collection",
         "../../../../../assets/modules/social-analytics/backbone/buzz/buzz-collection"
         /*"entities/socialanalytics"*/],
-    function(App, moment, listView, ArticleView, Articles, Buzz) {
+    function(App, moment, listView, ArticleView, Articles, BuzzInfo) {
 
         App.module('SocialAnalytics.List', function (List, App, Backbone, Marionette, $, _) {
             // Controller
             List.Controller = {
                 listSocialAnalytics: function( start, end, filterType, searchString ){
                   var myArticle = new Articles();
-                  var buzzInfo = new Buzz();
+                  var buzzInfo = new BuzzInfo();
                   var view = new ArticleView();
                   var finalArray = [];
                   var buzzInfoArray = [];
