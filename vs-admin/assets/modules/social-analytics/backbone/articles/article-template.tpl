@@ -5,8 +5,8 @@
 </div>
 <div class="contentpanel">
 
-    <div class="row mb10">
-        <div class="col-lg-6 col-md-6 col-sm-6">
+    <!-- <div class="row mb10"> -->
+        <!-- <div class="col-lg-6 col-md-6 col-sm-6">
             <form class="form-horizontal">
                 <div class="row">
                     <label class="col-lg-3 col-md-3 col-sm-3 control-label">Date Range:</label>
@@ -21,10 +21,9 @@
                     </div>
                 </div>
             </form>
-        </div>
-
-        <div class="col-lg-6 col-md-6 col-sm-6">
-            <form class="form-horizontal">
+        </div> -->
+        <!-- <div class="col-lg-6 col-md-6 col-sm-6"> -->
+            <!-- <form class="form-horizontal">
                 <div class="row">
                     <div class="col-lg-1 col-md-1 col-sm-1"></div>
                     <div class="col-lg-5 col-md-5 col-sm-5">
@@ -41,27 +40,39 @@
                         </div>
                     </div>
                 </div>
-            </form>
-        </div>
-    </div>
+            </form> -->
+        <!-- </div> -->
+    <!-- </div> -->
 
-    <div class='row mb10'>
-        <div class='col-lg-12 col-md-12'>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">View stats by:</label>
-                <div class="col-sm-10">
-                    <!-- <div class="js-select-video" id="video-picker" name="video-picker">
-                    </div> -->
-                </div>
+    <!-- SEARCH FORM -->
+    <div class="row">
+    <div class="col-md-12">
+        <h4 class="subtitle mb5">Search</h4>
+        <input type="text" value="" class="form-control js-tf-search" placeholder="e.g. Nobody Hates Mornings" />
+        <div class="mb20"></div>
+    </div>
+  </div>
+
+    <!-- <div class="row">
+        <ul class="pagination pull-right">
+        </ul>
+    </div> -->
+
+    <!-- PAGINATION -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-6">
+                <h4 class="panel-title js-results-title"></h4>
+                <p class="js-results-stats"></p>
+            </div>
+            <div class="col-md-6">
+                <ul class="pagination pull-right">
+                </ul>
             </div>
         </div>
     </div>
 
-    <div class="row">
-        <ul class="pagination pull-right">
-        </ul>
-    </div>
-
+    <!-- RESULTS -->
     <div class="row mb10">
         <div class="table-responsive stats-container">
           <table class="table table-hover mb30">
@@ -82,16 +93,16 @@
                           <%= finalArray[i].title %>
                       </td>
                       <td>
-                          <%= finalArray[i].facebook.shares %>
+                          <%= (finalArray[i].facebook.shares).toLocaleString() %>
                       </td>
                       <td>
-                          <%= finalArray[i].facebook.comments %>
+                          <%= (finalArray[i].facebook.comments).toLocaleString() %>
                       </td>
                       <td>
-                          <%= finalArray[i].facebook.shares + finalArray[i].facebook.comments %>
+                          <%= (finalArray[i].facebook.shares + finalArray[i].facebook.comments).toLocaleString() %>
                       </td>
                       <td>
-                          <%= finalArray[i].overall.shares %>
+                          <%= (finalArray[i].overall.shares).toLocaleString() %>
                       </td>
                       <td>
                           <%= finalArray[i].updated_at %>

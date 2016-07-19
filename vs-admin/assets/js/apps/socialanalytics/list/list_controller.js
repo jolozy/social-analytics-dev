@@ -13,6 +13,7 @@ define(["app","moment",
                   var myArticle = new Articles();
                   var buzzInfo = new BuzzInfo();
                   var view = new ArticleView();
+                  //var date = new moment();
                   var finalArray = [];
                   var buzzInfoArray = [];
                   var articleArray = [];
@@ -33,6 +34,7 @@ define(["app","moment",
                             var temp = articleArray[i].attributes;
                             temp.title = buzzInfo.title;
                             temp.url = buzzInfo.url;
+                            temp.updated_at = moment(articleArray.updated_at).format('MMMM Do, h:mm');
                             return temp;
                           }
                         }
