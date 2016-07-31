@@ -9,11 +9,18 @@ define(["backbone", "underscore", "jquery", "tpl!./article-template.tpl", "./art
             this.render;
           },
 
-          render: function(finalArray){
-            this.$el.html(this.template( {finalArray: finalArray} ));
+          // initialize: function(options) {
+          //     _.bindAll(this, 'render');
+          //     this.Articles = options.Articles;
+          //     this.BuzzInfo = options.BuzzInfo;
+          //     this.Articles.on('change', this.render);
+          //     this.BuzzInfo.on('change', this.render);
+          // },
+
+          render: function(articleArray, buzzInfoArray){
+            this.$el.html(this.template( {articleArray: articleArray, buzzInfoArray: buzzInfoArray} ));
             return this;
           }
-
         });
         return ArticleView;
-    });
+    });  

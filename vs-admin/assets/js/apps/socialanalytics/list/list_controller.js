@@ -13,42 +13,42 @@ define(["app","moment",
                   var myArticle = new Articles();
                   var buzzInfo = new BuzzInfo();
                   var view = new ArticleView();
-                  //var date = new moment();
-                  var finalArray = [];
-                  var buzzInfoArray = [];
+                  //var finalArray = [];
                   var articleArray = [];
-                  var counter = 0;
+                  var buzzInfoArray = [];
+                  //var counter = 0;
 
                   //counter to check if both fetches have been completed
-                  function counterCheck () {
-                    counter++;
-                    if(counter === 2) {
-                      finalArray = buzzInfoArray.filter(function (buzzInfo) {
-                        for (let i = 0; i < articleArray.length; i++) {
-                          if (buzzInfo.id === articleArray[i].attributes.id) return true;
-                        }
-                      })
-                      .map(function (buzzInfo) {
-                        for (var i = 0; i < articleArray.length; i++) {
-                          if(buzzInfo.id === articleArray[i].attributes.id) {
-                            var temp = articleArray[i].attributes;
-                            temp.title = buzzInfo.title;
-                            temp.url = buzzInfo.url;
-                            temp.updated_at = moment(articleArray.updated_at).format('MMMM Do, h:mm');
-                            return temp;
-                          }
-                        }
-                      });
-                      console.log(finalArray);
-                      view.render(finalArray); //renders ArticleView
-                    }
-                  }
+                  // function counterCheck () {
+                  //   counter++;
+                  //   if(counter === 2) {
+                  //     finalArray = buzzInfoArray.filter(function (buzzInfo) {
+                  //       for (let i = 0; i < articleArray.length; i++) {
+                  //         if (buzzInfo.id === articleArray[i].attributes.id) return true;
+                  //       }
+                  //     })
+                  //     .map(function (buzzInfo) {
+                  //       for (var i = 0; i < articleArray.length; i++) {
+                  //         if(buzzInfo.id === articleArray[i].attributes.id) {
+                  //           var temp = articleArray[i].attributes;
+                  //           temp.title = buzzInfo.title;
+                  //           temp.url = buzzInfo.url;
+                  //           temp.updated_at = moment(articleArray.updated_at).format('MMMM Do, h:mm');
+                  //           return temp;
+                  //         }
+                  //       }
+                  //     });
+                  //     console.log(finalArray);
+                  //     view.render(finalArray); //renders ArticleView
+                  //   }
+                  // }
 
                   //fetch from Mock
                   myArticle.fetch({
                     success: function (collection) {
                       articleArray = collection.models;
-                      counterCheck();
+                      return articleArray;
+                      //counterCheck();
                     }
                   });
 
@@ -56,15 +56,24 @@ define(["app","moment",
                   buzzInfo.fetch({
                     success: function (collection) {
                       buzzInfoArray = collection.models[0].attributes.posts.map(function (post) {
-                        var temp = {
+                        var buzzInfoArray = {
                           id: 'buzz_article_' + post.ID,
                           title: post.post_title,
                           url: post.post_url
                         }
-                        return temp;
+                        return buzzInfoArray;
                       })
-                      counterCheck();
+                      //counterCheck();
                     }
+                  });
+
+                  //when fetched, pass both collections to view to render
+                  $.when(
+                    myArticle.fetch(),
+                    buzzInfo.fetch()
+                  ).then(function(){
+                    //console.log("both bitchez are fetched");
+                    view.render(articleArray, buzzInfoArray);
                   });
 
                 }
@@ -103,4 +112,4 @@ define(["app","moment",
 
         return App.SocialAnalytics.List.Controller;
 
-    });
+    });  

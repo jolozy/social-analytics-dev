@@ -48,7 +48,8 @@
     <div class="row">
     <div class="col-md-12">
         <h4 class="subtitle mb5">Search</h4>
-        <input type="text" value="" class="form-control js-tf-search" placeholder="e.g. Nobody Hates Mornings" />
+        <input id="search" type="text" value="" class="form-control js-tf-search" placeholder="Title of Article" />
+        <div id="search"></div>
         <div class="mb20"></div>
     </div>
   </div>
@@ -66,7 +67,11 @@
                 <p class="js-results-stats"></p>
             </div>
             <div class="col-md-6">
-                <ul class="pagination pull-right">
+                <ul id="pages" class="pagination pull-right">
+                        <li class>
+                          <a class="js-page article-page">
+                          </a>
+                        </li>
                 </ul>
             </div>
         </div>
@@ -86,30 +91,26 @@
                   <th class="js-pivot analytics-pivot total-pivot active">Last Updated</th>
               </tr>
             </thead>
-            <tbody class="js-analytics-grid">
-              <% for (var i = 0; i < finalArray.length; i++) { %>
-                  <tr>
-                      <td>
-                          <%= finalArray[i].title %>
-                      </td>
-                      <td>
-                          <%= (finalArray[i].facebook.shares).toLocaleString() %>
-                      </td>
-                      <td>
-                          <%= (finalArray[i].facebook.comments).toLocaleString() %>
-                      </td>
-                      <td>
-                          <%= (finalArray[i].facebook.shares + finalArray[i].facebook.comments).toLocaleString() %>
-                      </td>
-                      <td>
-                          <%= (finalArray[i].overall.shares).toLocaleString() %>
-                      </td>
-                      <td>
-                          <%= finalArray[i].updated_at %>
-                      </td>
-                  </tr>
-                  <% }; %>
-            </tbody>
+
+<% console.log(articleArray); %>
+<% console.log(buzzInfoArray); %>
+
+            <% function loadPage() { %>
+              <% var finalArray = []; %>
+                <%   for (let i = 0; i < articleArray.length; i++) { %>
+                <%     if (buzzInfoArray.id === articleArray[i].attributes.id) { %>
+                  <%         var temp = articleArray[i].attributes; %>
+                  <%          temp.title = buzzInfoArray.title; %>
+                  <%          temp.url = buzzInfoArray.url; %>
+                  <%          temp.updated_at = articleArray.updated_at; %>
+                  <%          finalArray.push(temp); %>
+                <%     } %>
+                <%   } %>
+                <% console.log(finalArray); %>
+              <% } %>
+
+            <% window.onload = loadPage(); %>
+
           </table>
         </div>
     </div>

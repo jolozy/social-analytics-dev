@@ -76,7 +76,7 @@ function(App) {
                 });
             });
         }
-        
+
     };  // List.Controller
   });   // App.module
 

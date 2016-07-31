@@ -7,10 +7,11 @@ define(["backbone", "underscore"],
                 title: " "
             },
             initialize: function() {
-                console.log(this.attributes);
+                //console.log(this.attributes);
+                console.log("Initialized Article model!");
             }
         });
 
         return Article;
 
-    });
+    });  
