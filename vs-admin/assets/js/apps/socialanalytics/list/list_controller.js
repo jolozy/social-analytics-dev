@@ -43,7 +43,7 @@ define(["app","moment",
                     myArticle.fetch(),
                     buzzInfo.fetch()
                   ).then(function(){
-                    view.render(articleArray, buzzInfoArray);
+                    view.render(articleArray, buzzInfoArray, moment);
                   });
 
                 }

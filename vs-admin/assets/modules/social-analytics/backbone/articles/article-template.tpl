@@ -124,7 +124,7 @@
                           <%= (finalArray[i].overall.shares).toLocaleString() %>
                       </td>
                       <td>
-                          <%= finalArray[i].updated_at %>
+                        <%= moment(finalArray[i].updated_at).format('lll') %>
                       </td>
                   </tr>
                   <% }; %>
