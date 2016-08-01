@@ -91,25 +91,44 @@
                   <th class="js-pivot analytics-pivot total-pivot active">Last Updated</th>
               </tr>
             </thead>
-
-<% console.log(articleArray); %>
-<% console.log(buzzInfoArray); %>
-
-            <% function loadPage() { %>
+            <!-- <%          console.log(articleArray); %> -->
               <% var finalArray = []; %>
                 <%   for (let i = 0; i < articleArray.length; i++) { %>
-                <%     if (buzzInfoArray.id === articleArray[i].attributes.id) { %>
+                  <%   for (let j = 0; j < buzzInfoArray.length; j++) { %>
+                <%     if (buzzInfoArray[j].id === articleArray[i].attributes.id) { %>
                   <%         var temp = articleArray[i].attributes; %>
-                  <%          temp.title = buzzInfoArray.title; %>
-                  <%          temp.url = buzzInfoArray.url; %>
-                  <%          temp.updated_at = articleArray.updated_at; %>
+                  <%          temp.title = buzzInfoArray[j].title; %>
+                  <%          temp.url = buzzInfoArray[j].url; %>
+                  <%          temp.created_at = articleArray[i].created_at; %>
                   <%          finalArray.push(temp); %>
                 <%     } %>
+                <%     } %>
                 <%   } %>
-                <% console.log(finalArray); %>
-              <% } %>
-
-            <% window.onload = loadPage(); %>
+                <!-- <%          console.log(finalArray); %> -->
+            <tbody>
+              <% for (var i = 0; i < finalArray.length; i++) { %>
+                  <tr>
+                      <td>
+                          <%= finalArray[i].title %>
+                      </td>
+                      <td>
+                          <%= (finalArray[i].facebook.shares).toLocaleString() %>
+                      </td>
+                      <td>
+                          <%= (finalArray[i].facebook.comments).toLocaleString() %>
+                      </td>
+                      <td>
+                          <%= (finalArray[i].facebook.shares + finalArray[i].facebook.comments).toLocaleString() %>
+                      </td>
+                      <td>
+                          <%= (finalArray[i].overall.shares).toLocaleString() %>
+                      </td>
+                      <td>
+                          <%= finalArray[i].updated_at %>
+                      </td>
+                  </tr>
+                  <% }; %>
+            </tbody>
 
           </table>
         </div>
