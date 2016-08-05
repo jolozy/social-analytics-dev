@@ -7,11 +7,10 @@ define(["backbone", "underscore"],
                 title: " "
             },
             initialize: function() {
-                //console.log(this.attributes);
                 console.log("Initialized Buzz model!");
             }
         });
 
         return Buzz;
 
-    });  
+    });

@@ -14,4 +14,4 @@ define(["backbone", "underscore"],
 
         return Article;
 
-    });  
+    });

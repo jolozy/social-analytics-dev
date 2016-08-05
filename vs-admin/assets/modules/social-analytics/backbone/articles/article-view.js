@@ -9,10 +9,16 @@ define(["backbone", "moment", "underscore", "jquery", "tpl!./article-template.tp
             this.render;
           },
 
-          render: function(articleArray, buzzInfoArray, moment){
-            this.$el.html(this.template( {articleArray: articleArray, buzzInfoArray: buzzInfoArray, moment: moment} ));
+          render: function(myArticles, buzzInfo, moment){
+            this.$el.html(this.template({
+              myArticles: myArticles,
+              buzzInfo: buzzInfo,
+              moment: moment
+            } ));
             return this;
           }
         });
+
         return ArticleView;
+
     });
