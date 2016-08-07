@@ -1,5 +1,5 @@
-define(["backbone", "underscore", "./buzz-model"],
-    function(backbone, _, Buzz) {
+define(["backbone", "backbone.paginator", "underscore", "./buzz-model"],
+    function(backbone, paginator, _, Buzz) { //Not sure if paginator here is required? Doesn't seem to work if I dont put it here
 
         var BuzzInfo = Backbone.Collection.extend({
             crossDomain: true,
@@ -25,9 +25,32 @@ define(["backbone", "underscore", "./buzz-model"],
               });
 
             }
-
         });
-
         return BuzzInfo;
+
+        //Paginated BuzzInfo collection
+        var PaginatedBuzzInfo = Backbone.Paginator.requestPager.extend({
+          model: Buzz,
+          url: 'http://starfish.viddsee.com/api/buzz/v1/posts',
+          paginator_ui: {
+            firstPage: 0,
+            currentPage: 0,
+            totalPages: 10,
+            perPage: 10,
+            pagesInRange: 2
+          },
+          server_api: {
+            'per_page': function () {return this.perPage;},
+            'current_page': function () {return this.currentPage;}
+          },
+          parse: function(results){
+            this.perPage      = results.per_page;
+            this.currentPage  = results.current_page;
+            this.totalPages   = results.total_pages;
+            var everything = results;
+            console.log(results);
+            return results;
+          }
+        });
 
     });
