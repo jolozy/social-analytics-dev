@@ -1,5 +1,5 @@
 define(["backbone", "backbone.paginator", "underscore", "./buzz-model"],
-    function(backbone, paginator, _, Buzz) { //Not sure if paginator here is required? Doesn't seem to work if I dont put it here
+    function(backbone, paginator, _, Buzz) {
 
         var BuzzInfo = Backbone.Collection.extend({
             crossDomain: true,
@@ -28,7 +28,7 @@ define(["backbone", "backbone.paginator", "underscore", "./buzz-model"],
         });
         return BuzzInfo;
 
-        //Paginated BuzzInfo collection
+        //Paginated BuzzInfo collection that should replace above
         var PaginatedBuzzInfo = Backbone.Paginator.requestPager.extend({
           model: Buzz,
           url: 'http://starfish.viddsee.com/api/buzz/v1/posts',
