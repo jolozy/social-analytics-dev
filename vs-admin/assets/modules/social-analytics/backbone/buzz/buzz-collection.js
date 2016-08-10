@@ -4,7 +4,7 @@ define(["backbone", "backbone.paginator", "underscore", "./buzz-model"],
         var BuzzInfo = Backbone.Collection.extend({
             crossDomain: true,
             model: Buzz,
-            url: 'http://starfish.viddsee.com/api/buzz/v1/posts',
+            url: 'http://buzz.viddsee.com/api/buzz/v1/posts',
             initialize: function(){
 
               var _this = this;
@@ -27,30 +27,5 @@ define(["backbone", "backbone.paginator", "underscore", "./buzz-model"],
             }
         });
         return BuzzInfo;
-
-        //Paginated BuzzInfo collection that should replace above
-        var PaginatedBuzzInfo = Backbone.Paginator.requestPager.extend({
-          model: Buzz,
-          url: 'http://starfish.viddsee.com/api/buzz/v1/posts',
-          paginator_ui: {
-            firstPage: 0,
-            currentPage: 0,
-            totalPages: 10,
-            perPage: 10,
-            pagesInRange: 2
-          },
-          server_api: {
-            'per_page': function () {return this.perPage;},
-            'current_page': function () {return this.currentPage;}
-          },
-          parse: function(results){
-            this.perPage      = results.per_page;
-            this.currentPage  = results.current_page;
-            this.totalPages   = results.total_pages;
-            var everything = results;
-            console.log(results);
-            return results;
-          }
-        });
 
     });
