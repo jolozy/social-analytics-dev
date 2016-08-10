@@ -1,10 +1,13 @@
 define(["backbone", "backbone.paginator", "underscore", "./buzz-model"],
     function(backbone, paginator, _, Buzz) {
+      console.log (backbone);
 
         var BuzzInfo = Backbone.Collection.extend({
+        //var BuzzInfo = backbone.requestPager.extend({
             crossDomain: true,
             model: Buzz,
             url: 'http://buzz.viddsee.com/api/buzz/v1/posts',
+
             initialize: function(){
 
               var _this = this;
@@ -24,8 +27,30 @@ define(["backbone", "backbone.paginator", "underscore", "./buzz-model"],
 
               });
 
+            },
+
+            //pagination
+            paginator_ui: {
+              firstPage: 0,
+              currentPage: 0,
+              totalPages: 0,
+              perPage: 10,
+              pagesInRange: 2
+            },
+            server_api: {
+              'per_page': function () {return this.perPage;},
+              'current_page': function () {return this.currentPage;}
+            },
+            parse: function(results){
+              this.perPage      = results.per_page;
+              this.currentPage  = results.current_page;
+              this.totalPages   = results.total_pages;
+              var everything = results;
+              return results;
             }
+
         });
+
         return BuzzInfo;
 
     });
