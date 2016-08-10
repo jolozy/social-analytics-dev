@@ -111,7 +111,7 @@ define(["app", "moment", "apps/config/storage/localstorage", "backbone.paginator
                 return res.results;
             }
         });
-        
+
         Entities.VideoComments  = Backbone.Model.extend({
             defaults : {
                 'rank'     : '-',
@@ -160,7 +160,7 @@ define(["app", "moment", "apps/config/storage/localstorage", "backbone.paginator
                 return res.results;
             }
         });
-        
+
         Entities.Reply = Backbone.Model.extend({
             idAttribute: "_id",
             defaults: {
@@ -219,13 +219,13 @@ define(["app", "moment", "apps/config/storage/localstorage", "backbone.paginator
 
         Entities.CommentCollection = Backbone.Paginator.requestPager.extend({
             model: Entities.Comment,
-            
+
             paginator_core: {
                 type: 'POST',
                 dataType: 'json',
                 url: App.apiURL + 'admin/comments'
             },
-            
+
             paginator_ui: {
                 firstPage: 0,
                 currentPage: 0,

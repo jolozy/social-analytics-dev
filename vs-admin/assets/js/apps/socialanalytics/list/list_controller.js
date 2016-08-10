@@ -8,13 +8,14 @@ define(["app","moment",
 
         App.module('SocialAnalytics.List', function (List, App, Backbone, Marionette, $, _) {
             // Controller
+            let Buzz = BuzzInfo(Backbone)
             List.Controller = {
 
                 listSocialAnalytics: function( start, end, filterType, searchString ){
                   var myArticles = new Articles();
-                  var buzzInfo = new BuzzInfo();
+                  var buzzInfo = new Buzz();
                   var view = new ArticleView();
-
+                  console.log(buzzInfo)
                   //when fetched from both Mock and Buzz, pass both collections to view to render
                   $.when(
                     myArticles.fetch(),

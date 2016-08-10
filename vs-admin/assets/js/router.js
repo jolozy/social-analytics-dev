@@ -15,8 +15,7 @@ define(["app",
     "apps/facebook/facebook",
     "apps/buzz/buzz",
     "apps/tag/tag",
-    "../modules/social-analytics/backbone/articles/article-model",
-    "../modules/social-analytics/backbone/articles/article-collection"],
+    ],
 function(App) {
 
   App.module('Router', function (Router, App, Backbone, Marionette, $, _) {
