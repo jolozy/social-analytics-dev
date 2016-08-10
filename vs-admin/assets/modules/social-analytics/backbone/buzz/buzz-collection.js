@@ -29,6 +29,7 @@ define(["app", "underscore", "./buzz-model"],
           // return BuzzInfo;
 
       function test (Backbone) {
+        
         var PaginatedBuzzInfo = Backbone.Paginator.requestPager.extend({
           model: Buzz,
           url: 'http://buzz.viddsee.com/api/buzz/v1/posts',
@@ -50,29 +51,28 @@ define(["app", "underscore", "./buzz-model"],
             var everything = results;
             return results;
           },
+
           initialize: function(){
-
             var _this = this;
-
             //pre-processing before fetch and overwriting the fetch function
             //when collection has been successfully synched with the server
             this.on('sync', function(collection){
               var posts = collection.models[0].attributes.posts;
-
               //manipulate every post and adding a uid
               _.each(posts, function(post, index){
                 posts[index].uid = 'buzz_article_' + post.ID;
               });
-
               //replace collection with posts
               _this.reset(posts);
-
             });
-
           }
+
         });
-        return PaginatedBuzzInfo
+
+        return PaginatedBuzzInfo;
+
       }
-      return test
+
+      return test;
 
   });
