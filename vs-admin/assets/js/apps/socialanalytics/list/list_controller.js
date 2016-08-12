@@ -16,7 +16,7 @@ define(["app","moment",
                   var myArticles = new Articles();
                   var buzzInfo = new Buzz();
                   var view = new ArticleView();
-                  console.log(buzzInfo)
+                  //console.log(buzzInfo) //returns the entire backbone object
                   //when fetched from both Mock and Buzz, pass both collections to view to render
 
                   $.when(
