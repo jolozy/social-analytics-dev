@@ -7,6 +7,7 @@ define(["app","moment",
     function(App, moment, listView, ArticleView, Articles, BuzzInfo) {
 
         App.module('SocialAnalytics.List', function (List, App, Backbone, Marionette, $, _) {
+
             // Controller
             List.Controller = {
 
