@@ -1,7 +1,8 @@
 define(["app", "underscore", "./buzz-model"],
     function(App, _, Buzz) {
 
-      //console.log( 'paginator', Backbone.Paginator );
+      console.log( 'paginator', Backbone.Paginator );
+      console.log( 'requestpager', Backbone.Paginator.requestPager );
         var BuzzInfo = Backbone.Paginator.requestPager.extend({
             crossDomain: true,
             model: Buzz,
@@ -16,7 +17,6 @@ define(["app", "underscore", "./buzz-model"],
 
               this.on('sync', function(collection){
                 console.log(collection);
-                /*
                 var posts = collection.models[0].attributes.posts;
 
                 //manipulate every post and adding a uid
@@ -26,10 +26,9 @@ define(["app", "underscore", "./buzz-model"],
 
                 //replace collection with posts
                 _this.reset(posts);
-                */
               });
 
-            },
+            }
 
             // //pagination
             // paginator_ui: {
