@@ -1,9 +1,7 @@
 define(["app", "underscore", "./buzz-model"],
     function(App, _, Buzz) {
 
-      console.log( 'paginator', Backbone.Paginator );
-
-        //var BuzzInfo = Backbone.Collection.extend({
+      //console.log( 'paginator', Backbone.Paginator );
         var BuzzInfo = Backbone.Paginator.requestPager.extend({
             crossDomain: true,
             model: Buzz,
