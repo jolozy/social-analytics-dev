@@ -1,9 +1,7 @@
 define(["app", "underscore", "./buzz-model"],
     function(App, _, Buzz) {
 
-      console.log( 'paginator', Backbone.Paginator );
-      console.log( 'requestpager', Backbone.Paginator.requestPager );
-        var BuzzInfo = Backbone.Paginator.requestPager.extend({
+        var BuzzInfo = Backbone.Collection.extend({
             crossDomain: true,
             model: Buzz,
             url: 'http://buzz.viddsee.com/api/buzz/v1/posts',
