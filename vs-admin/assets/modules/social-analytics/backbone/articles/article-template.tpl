@@ -23,14 +23,14 @@
                 <p class="js-results-stats"></p>
             </div>
             <div class="col-md-6">
-                <ul id="pages" class="pagination pull-right">
-                  <li class="disabled"><a href="#">&laquo;</a></li>
-                  <li class="active"><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
-                  <li><a href="#">&raquo;</a></li>
+                <ul class="pagination pull-right">
+                  <li><a class="paginated-next">&laquo;</a></li>
+                  <li><a class="paginated-page">1</a></li>
+                  <li><a class="paginated-page">2</a></li>
+                  <li><a class="paginated-page">3</a></li>
+                  <li><a class="paginated-page">4</a></li>
+                  <li><a class="paginated-page">5</a></li>
+                  <li><a class="paginated-previous">&raquo;</a></li>
                 </ul>
             </div>
         </div>
