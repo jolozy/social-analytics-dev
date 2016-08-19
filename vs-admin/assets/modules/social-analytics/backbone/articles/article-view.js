@@ -20,11 +20,36 @@ define(["backbone", "moment", "underscore", "jquery", "tpl!./article-template.tp
 
           //pagination
           events: {
-            'click .paginated-page': 'loadMore'
+            'click .paginated-page': 'callArticles'
           },
-          loadMore: function(event){
+          callArticles: function(event){
             event.preventDefault();
-            console.log(buzzInfo.fetch({data: {offset: 20}}));
+
+            //START AJAX
+            $.ajax({
+              url: 'http://buzz.viddsee.com/api/buzz/v1/posts',
+              data: {
+                //current_page: event.target.innerHTML,
+                //total: 2180,
+                offset: ((event.target.innerHTML) -1) *10 +1,
+                per_page: 10
+              },
+              error: function(){
+                console.log("ERROR!");
+                $
+              },
+              //dataType: 'jsonp',
+              success: function(data){
+                this.showArticles(data);
+              },
+              showArticles: function(data){
+                console.log(data);
+                //console.log(this.url)
+              },
+              type: 'GET'
+            });
+            //END AJAX
+
           }
 
         });
@@ -32,11 +57,6 @@ define(["backbone", "moment", "underscore", "jquery", "tpl!./article-template.tp
         return ArticleView;
 
     });
-
-
-
-
-
 
 
     // if (event.target.innerHTML == "1"){
