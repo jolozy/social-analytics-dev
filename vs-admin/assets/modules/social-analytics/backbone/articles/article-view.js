@@ -44,11 +44,27 @@ define(["backbone", "moment", "underscore", "jquery", "tpl!./article-template.tp
               },
               showArticles: function(data){
                 console.log(data);
-                //console.log(this.url)
-              },
+                //console.log(this.url);
+                console.log(Articles); //returns me a function???
+
+                $('#social-analytics-results').empty();
+                  _.each(data, function(post, index){
+                    if(typeof Articles.get(post.uid) != 'undefined'){
+                      $('#social-analytics-results').append('<tr><td>'+ post.post_title +'</td></tr>');
+
+                      //IGNORE THE BELOW
+                      //console.log(Articles.get(post.uid))
+                      // (Articles.get(post.uid).attributes.facebook.shares).toLocaleString();
+                      // (Articles.get(post.uid).attributes.facebook.comments).toLocaleString();
+                      // (Articles.get(post.uid).attributes.facebook.shares + Articles.get(post.uid).attributes.facebook.comments).toLocaleString();
+                      // (Articles.get(post.uid).attributes.overall.shares).toLocaleString();
+                      // moment(Articles.get(post.uid).attributes.updated_at).format('MMMM Do, h:mm a');
+                    }
+                  });//end loop to match Buzz with Articles
+
+            },//end showArticles
               type: 'GET'
-            });
-            //END AJAX
+            }); //end AJAX
 
           }
 

@@ -51,13 +51,12 @@
               </tr>
             </thead>
 
-            <tbody class="js-analytics-grid">
+            <tbody id="social-analytics-results" class="js-analytics-grid">
               <% _.each(buzzInfo.toJSON(), function(post, index){ %>
 
                 <% if(typeof myArticles.get(post.uid) != 'undefined'){ %>
                   <tr>
                     <td><%= post.post_title %></td>
-                    <% console.log(myArticles.get(post.uid)) %>
                     <td><%= (myArticles.get(post.uid).attributes.facebook.shares).toLocaleString() %></td>
                     <td><%= (myArticles.get(post.uid).attributes.facebook.comments).toLocaleString() %></td>
                     <td><%= (myArticles.get(post.uid).attributes.facebook.shares + myArticles.get(post.uid).attributes.facebook.comments).toLocaleString() %></td>
