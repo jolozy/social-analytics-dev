@@ -44,7 +44,7 @@ define(["backbone", "moment", "underscore", "jquery", "tpl!./article-template.tp
               },
               showArticles: function(data){
                 //console.log(data);
-                //console.log(this.url);
+                console.log(this.url);
                 console.log(myArticles); //returns me a function???
 
                 $('#social-analytics-results').empty();
