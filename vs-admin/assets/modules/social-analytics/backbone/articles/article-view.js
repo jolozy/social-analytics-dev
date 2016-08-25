@@ -2,6 +2,11 @@ define(["backbone", "moment", "underscore", "jquery", "tpl!./article-template.tp
     function(backbone, moment, _, $, tpl, Articles, buzzInfo) {
 
         var ArticleView = Backbone.View.extend({
+
+          //collections
+          myArticles: Articles,
+          myBuzzInfo: buzzInfo,
+
           el: '#main-region',
           template: tpl,
 
@@ -9,12 +14,15 @@ define(["backbone", "moment", "underscore", "jquery", "tpl!./article-template.tp
             this.render;
           },
 
-          render: function(myArticles, buzzInfo, moment){
+          render: function(myArticles, myBuzzInfo, moment){
             this.$el.html(this.template({
+              //myArticles: myArticles,
               myArticles: myArticles,
-              buzzInfo: buzzInfo,
+              myBuzzInfo: myBuzzInfo,
               moment: moment
             } ));
+            //console.log('ArticlesCollection',myArticles);
+            //console.log('buzztoJSON',myBuzzInfo.toJSON());
             return this;
           },
 
@@ -44,22 +52,22 @@ define(["backbone", "moment", "underscore", "jquery", "tpl!./article-template.tp
               },
               showArticles: function(data){
                 //console.log(data);
-                console.log(this.url);
-                console.log(myArticles); //returns me a function???
+                //console.log(this.url);
+                //console.log(myArticles); //returns me a function???
 
                 $('#social-analytics-results').empty();
-                  _.each(data, function(post, index){
-                    if(typeof Articles.get(post.uid) != 'undefined'){
-                      $('#social-analytics-results').append('<tr><td>'+ post.post_title +'</td></tr>');
-
-                      //console.log(Articles.get(post.uid))
-                      // (Articles.get(post.uid).attributes.facebook.shares).toLocaleString();
-                      // (Articles.get(post.uid).attributes.facebook.comments).toLocaleString();
-                      // (Articles.get(post.uid).attributes.facebook.shares + Articles.get(post.uid).attributes.facebook.comments).toLocaleString();
-                      // (Articles.get(post.uid).attributes.overall.shares).toLocaleString();
-                      // moment(Articles.get(post.uid).attributes.updated_at).format('MMMM Do, h:mm a');
-                    }
-                  });//end loop to match Buzz with Articles
+                  // _.each(data, function(post, index){
+                  //   if(typeof Articles.get(post.uid) != 'undefined'){
+                  //     $('#social-analytics-results').append('<tr><td>'+ post.post_title +'</td></tr>');
+                  //
+                  //     //console.log(Articles.get(post.uid))
+                  //     // (Articles.get(post.uid).attributes.facebook.shares).toLocaleString();
+                  //     // (Articles.get(post.uid).attributes.facebook.comments).toLocaleString();
+                  //     // (Articles.get(post.uid).attributes.facebook.shares + Articles.get(post.uid).attributes.facebook.comments).toLocaleString();
+                  //     // (Articles.get(post.uid).attributes.overall.shares).toLocaleString();
+                  //     // moment(Articles.get(post.uid).attributes.updated_at).format('MMMM Do, h:mm a');
+                  //   }
+                  // });//end loop to match Buzz with Articles
 
             },//end showArticles
               type: 'GET'
@@ -72,26 +80,3 @@ define(["backbone", "moment", "underscore", "jquery", "tpl!./article-template.tp
         return ArticleView;
 
     });
-
-
-    // if (event.target.innerHTML == "1"){
-    //   //console.log(Articles);
-    //   //how do we pass attributes like per_page and offset to the collection?
-    //   console.log("HELLO I AM HERE I EXIST AS 1");
-    // }
-    //
-    // else if (event.target.innerHTML == "2"){
-    //   console.log("HELLO I AM HERE I EXIST AS 2");
-    // }
-    //
-    // else if (event.target.innerHTML == "3"){
-    //   console.log("HELLO I AM HERE I EXIST AS 3");
-    // }
-    //
-    // else if {
-    //   console.log("HELLO I AM HERE I EXIST AS 4");
-    // }
-    //
-    // else {
-    //   console.log("HELLO I AM HERE I EXIST AS 5");
-    // }

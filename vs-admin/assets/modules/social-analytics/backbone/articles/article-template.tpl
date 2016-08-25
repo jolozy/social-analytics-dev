@@ -52,7 +52,8 @@
             </thead>
 
             <tbody id="social-analytics-results" class="js-analytics-grid">
-              <% _.each(buzzInfo.toJSON(), function(post, index){ %>
+
+              <% _.each((myBuzzInfo.toJSON()), function(post, index){ %>
 
                 <% if(typeof myArticles.get(post.uid) != 'undefined'){ %>
                   <tr>
