@@ -16,7 +16,7 @@ define(["app","moment",
                   var buzzInfo = new BuzzInfo();
                   var view = new ArticleView();
 
-                  //when fetched from both Mock and Buzz, pass both collections to view to render
+                  //when fetched from both Mock and Buzz, pass both collections to view
                   $.when(
                     myArticles.fetch(),
                     buzzInfo.fetch()
