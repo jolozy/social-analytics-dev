@@ -53,20 +53,8 @@
 
             <tbody id="social-analytics-results" class="js-analytics-grid">
 
-              <% _.each((myBuzzInfo.toJSON()), function(post, index){ %>
 
-                <% if(typeof myArticles.get(post.uid) != 'undefined'){ %>
-                  <tr>
-                    <td><%= post.post_title %></td>
-                    <td><%= (myArticles.get(post.uid).attributes.facebook.shares).toLocaleString() %></td>
-                    <td><%= (myArticles.get(post.uid).attributes.facebook.comments).toLocaleString() %></td>
-                    <td><%= (myArticles.get(post.uid).attributes.facebook.shares + myArticles.get(post.uid).attributes.facebook.comments).toLocaleString() %></td>
-                    <td><%= (myArticles.get(post.uid).attributes.overall.shares).toLocaleString() %></td>
-                    <td><%= moment(myArticles.get(post.uid).attributes.updated_at).format('MMMM Do, h:mm a') %></td>
-                  </tr>
-                <% } %>
 
-              <% }) %>
             </tbody>
 
           </table>
