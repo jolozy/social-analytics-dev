@@ -12,6 +12,7 @@ define(["backbone", "moment", "underscore", "jquery", "tpl!./article-template.tp
 
           initialize: function(){
             this.render;
+            //this.collection
           },
 
           render: function(myArticles, myBuzzInfo, moment){
@@ -19,7 +20,7 @@ define(["backbone", "moment", "underscore", "jquery", "tpl!./article-template.tp
               myArticles: myArticles,
               myBuzzInfo: myBuzzInfo,
               moment: moment
-              //empty out the table? then render into view!
+              //empty out the table? then render into view?
             } ));
             return this;
           },
@@ -57,10 +58,10 @@ define(["backbone", "moment", "underscore", "jquery", "tpl!./article-template.tp
                     console.log((mock.facebook.shares + mock.facebook.comments).toLocaleString());
                     console.log((mock.overall.shares).toLocaleString());
                     console.log(moment(mock.updated_at).format('MMMM Do, h:mm a'));
+
                   }
                 });
               });
-
             }); //ends ajax double checks
 
             function ajax1(){
@@ -102,27 +103,6 @@ define(["backbone", "moment", "underscore", "jquery", "tpl!./article-template.tp
               });
             }
           } //end callArticles
-
-
-        //   showArticles: function(data){
-        //     console.log(data);
-        //     console.log(this.url);
-        //     //console.log(myArticles); //returns me a function???
-        //
-        //     //$('#social-analytics-results').empty();
-              // _.each(data, function(post, index){
-              //   if(typeof Articles.get(post.uid) != 'undefined'){
-              //     $('#social-analytics-results').append('<tr><td>'+ post.post_title +'</td></tr>');
-              //
-              //     //console.log(Articles.get(post.uid))
-              //     // (Articles.get(post.uid).attributes.facebook.shares).toLocaleString();
-              //     // (Articles.get(post.uid).attributes.facebook.comments).toLocaleString();
-              //     // (Articles.get(post.uid).attributes.facebook.shares + Articles.get(post.uid).attributes.facebook.comments).toLocaleString();
-              //     // (Articles.get(post.uid).attributes.overall.shares).toLocaleString();
-              //     // moment(Articles.get(post.uid).attributes.updated_at).format('MMMM Do, h:mm a');
-              //   }
-              // });//end loop to match Buzz with Articles
-        // }//end showArticles
 
       }); //end ArticleView
 
