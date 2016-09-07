@@ -17,8 +17,8 @@ define(["backbone", "moment", "underscore", "jquery", "tpl!./article-template.tp
 
           render: function(myArticles, myBuzzInfo, moment){
             this.$el.html(this.template({
-              myArticles: myArticles,
-              myBuzzInfo: myBuzzInfo,
+              myArticles: this.myArticles,
+              myBuzzInfo: this.myBuzzInfo,
               moment: moment
               //empty out the table? then render into view?
             } ));
