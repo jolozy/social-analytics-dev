@@ -42,11 +42,11 @@ define(["backbone", "moment", "underscore", "jquery", "tpl!./article-template.tp
               _.each(x, function(post, index){
                 x[index].uid = 'buzz_article_' + post.ID;
               });
-              console.log(x);
+              //console.log(x);
 
               //y = posts from Mock API
               var y = articleData[0]
-              console.log(y);
+              //console.log(y);
 
               //match posts from both API
               _.each( x, function(buzz, index){
