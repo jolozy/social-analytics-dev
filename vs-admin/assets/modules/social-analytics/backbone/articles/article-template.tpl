@@ -25,13 +25,13 @@
             <div class="col-md-6">
                 <ul class="pagination pull-right">
                   <li><a class="paginated-next">&laquo;</a></li>
-                  <li><a class="paginated-page">1</a></li>
-                  <li><a class="paginated-page">2</a></li>
-                  <li><a class="paginated-page">3</a></li>
-                  <li><a class="paginated-page">4</a></li>
-                  <li><a class="paginated-page">5</a></li>
+                  <li><a class="paginated-page" data-value="1">1</a></li>
+                  <li><a class="paginated-page" data-value="2">2</a></li>
+                  <li><a class="paginated-page" data-value="3">3</a></li>
+                  <li><a class="paginated-page" data-value="4">4</a></li>
+                  <li><a class="paginated-page" data-value="5">5</a></li>
                   <li><a class="paginated-previous">&raquo;</a></li>
-                </ul>
+                </ul
             </div>
         </div>
     </div>
