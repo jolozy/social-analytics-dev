@@ -11,22 +11,23 @@ define(["backbone", "moment", "underscore", "jquery", "tpl!./article-template.tp
           template: tpl,
 
           initialize: function(){
-            this.render;
+            //this.render;
             //this.bindEvents();
           },
 
           render: function(myArticles, myBuzzInfo, moment){
             this.$el.html(this.template({
-              myArticles: this.myArticles,
-              myBuzzInfo: this.myBuzzInfo,
+              // myArticles: this.myArticles,
+              // myBuzzInfo: this.myBuzzInfo,
+              myArticles: myArticles,
+              myBuzzInfo: myBuzzInfo,
               moment: moment
             } ));
             return this;
           },
 
-          //pagination
           events: {
-            'click .paginated-page': 'fetchAll'
+            'click .paginated-page': 'fetchAll' //pagination
           },
 
           /////NEW/////
@@ -42,21 +43,18 @@ define(["backbone", "moment", "underscore", "jquery", "tpl!./article-template.tp
           //   //$('.paginated-page').on("click",_this.fetchAll);
           // },
 
-          /////NEW/////
           // setSelectedPaginatedPage: function($el){
           //   console.log($el);
           //   $('.paginated-page.selected').removeClass('selected');
           //   $el.addClass('selected'); //DO: have to write a CSS class that makes a page button active!!
           // },
 
-          /////NEW/////
           // fetchAll: function($el){
           //   var _this = this;
           //   var PER_PAGE = 10;
           //   var OFFSET = $el.attr('data-value');
           //   _this.myBuzzInfo.url = 'http://buzz.viddsee.com/api/buzz/v1/posts?offset' + OFFSET + '&per_page' + PER_PAGE; //change buzz collection's URL
 
-            /////NEW/////
             ////Check AJAX calls
             //$.when( _this.myBuzzInfo.fetch(), _this.myArticles.fetch() ).done(function(buzzData, articleData){
             //  _this.render();
@@ -74,10 +72,7 @@ define(["backbone", "moment", "underscore", "jquery", "tpl!./article-template.tp
               //posts from Mock API
               var y = articleData[0]
 
-              // console.log('buzz',x);
-              // console.log('mock',y);
-              that.render();
-
+              that.render(x,y);
               // //match posts from both API
               // _.each( x, function(buzz, index){
               //   _.each( y, function(mock, index){
@@ -114,7 +109,6 @@ define(["backbone", "moment", "underscore", "jquery", "tpl!./article-template.tp
             //   });
             // }
 
-            /////NEW 2/////
             function fetchMyBuzzInfo(){ //AJAX call for Buzz Viddsee
                 var PER_PAGE = 10;
                 var OFFSET = 10;
