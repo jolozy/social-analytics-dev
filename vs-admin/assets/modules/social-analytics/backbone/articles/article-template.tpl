@@ -53,8 +53,21 @@
 
             <tbody id="social-analytics-results" class="js-analytics-grid">
 
-              <% console.log(myArticles) %>
-              <% console.log(myBuzzInfo.toJSON()) %>
+              <% _.each( myBuzzInfo, function(buzz, index){ %>
+                <% _.each( myArticles, function(mock, index){ %>
+                  <% if( buzz.uid == mock.id ){ %>
+                  <tr>
+                    <td><%= buzz.post_title %></td>
+                    <td><%= (mock.facebook.shares).toLocaleString() %></td>
+                    <td><%= (mock.facebook.comments).toLocaleString() %></td>
+                    <td><%= (mock.facebook.shares + mock.facebook.comments).toLocaleString() %></td>
+                    <td><%= (mock.overall.shares).toLocaleString() %></td>
+                    <td><%= mock.updated_at %></td>
+                    <!-- <td><#%= moment(mock.updated_at).format('MMMM Do, h:mm a') #%></td> -->
+                  </tr>
+                  <% } %>
+                <% }); %>
+              <% }); %>
 
             </tbody>
 

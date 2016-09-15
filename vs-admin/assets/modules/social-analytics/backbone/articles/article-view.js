@@ -11,16 +11,14 @@ define(["backbone", "moment", "underscore", "jquery", "tpl!./article-template.tp
           template: tpl,
 
           initialize: function(){
-            //this.render;
+            this.render;
             //this.bindEvents();
           },
 
           render: function(myArticles, myBuzzInfo, moment){
             this.$el.html(this.template({
-              // myArticles: this.myArticles,
-              // myBuzzInfo: this.myBuzzInfo,
-              myArticles: myArticles,
-              myBuzzInfo: myBuzzInfo,
+              myArticles: this.myArticles,
+              myBuzzInfo: this.myBuzzInfo,
               moment: moment
             } ));
             return this;
@@ -65,14 +63,15 @@ define(["backbone", "moment", "underscore", "jquery", "tpl!./article-template.tp
 
             $.when( fetchMyBuzzInfo(), fetchMyArticles() ).done(function(buzzData, articleData){
               //posts from Buzz Viddsee
-              var x = buzzData[0].posts
-              _.each(x, function(post, index){
-                x[index].uid = 'buzz_article_' + post.ID;
+              that.myBuzzInfo = buzzData[0].posts
+              _.each((buzzData[0].posts), function(post, index){
+                (buzzData[0].posts)[index].uid = 'buzz_article_' + post.ID;
               });
               //posts from Mock API
-              var y = articleData[0]
+              that.myArticles = articleData[0]
 
-              that.render(x,y);
+              that.render();
+
               // //match posts from both API
               // _.each( x, function(buzz, index){
               //   _.each( y, function(mock, index){
@@ -111,9 +110,9 @@ define(["backbone", "moment", "underscore", "jquery", "tpl!./article-template.tp
 
             function fetchMyBuzzInfo(){ //AJAX call for Buzz Viddsee
                 var PER_PAGE = 10;
-                var OFFSET = 10;
-                var paginatedURL = 'http://buzz.viddsee.com/api/buzz/v1/posts?offset' + OFFSET + '&per_page' + PER_PAGE; //change buzz collection's URL
-                //console.log(paginatedURL);
+                var OFFSET = ( $(event.target).data('value') -1) *10 +1;
+                var paginatedURL = 'http://buzz.viddsee.com/api/buzz/v1/posts?offset=' + OFFSET + '&per_page=' + PER_PAGE; //change buzz collection's URL
+                console.log(paginatedURL);
                 return $.ajax({
                   url: paginatedURL,
                   data: {
