@@ -12,7 +12,7 @@ define(["backbone", "moment", "underscore", "jquery", "tpl!./article-template.tp
 
           initialize: function(){
             this.render;
-            //this.bindEvents();
+            this.bindEvents();
           },
 
           render: function(myArticles, myBuzzInfo, moment){
@@ -24,15 +24,11 @@ define(["backbone", "moment", "underscore", "jquery", "tpl!./article-template.tp
             return this;
           },
 
-          events: {
-            'click .paginated-page': 'fetchAll' //pagination
-          },
-
           /////TRIES AARON'S RECOMMENDATION/////
           bindEvents: function(e){
             var _this = this
 
-            $(document).on('click', 'paginated-page', function(e){
+            $(document).on('click', '.paginated-page', function(e){
               e.preventDefault();
               _this.setSelectedPaginatedPage( $(this) ); //gives selected page button an active class
               _this.fetchAll( $(this) ); //fetch all from Mock and Buzz
@@ -45,14 +41,14 @@ define(["backbone", "moment", "underscore", "jquery", "tpl!./article-template.tp
           setSelectedPaginatedPage: function($el){
             console.log($el);
             $('.paginated-page.selected').removeClass('selected');
-            ($el).addClass('selected'); //DO: have to write a CSS class that makes a page button active!!
+            $el.addClass('selected'); //DO: have to write a CSS class that makes a page button active!!
           },
 
           fetchAll: function($el){
             var _this = this;
             var PER_PAGE = 10;
-            var OFFSET = ($el).attr('data-value');
-            _this.myBuzzInfo.url = 'http://buzz.viddsee.com/api/buzz/v1/posts?offset' + OFFSET + '&per_page' + PER_PAGE; //change buzz collection's URL
+            var OFFSET = $el.attr('data-value');
+            _this.myBuzzInfo.url = 'http://buzz.viddsee.com/api/buzz/v1/posts?offset=' + OFFSET + '&per_page=' + PER_PAGE; //change buzz collection's URL
 
             //Check AJAX calls
             $.when( _this.myBuzzInfo.fetch(), _this.myArticles.fetch() ).done(function(buzzData, articleData){
