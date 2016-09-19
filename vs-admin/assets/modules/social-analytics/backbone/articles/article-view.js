@@ -28,7 +28,7 @@ define(["backbone", "moment", "underscore", "jquery", "tpl!./article-template.tp
             'click .paginated-page': 'fetchAll' //pagination
           },
 
-          /////NEW/////
+          /////TRIES AARON'S RECOMMENDATION/////
           // bindEvents: function(e){
           //   var _this = this
           //   $('.paginated-page').on("click",function(e){
@@ -58,6 +58,7 @@ define(["backbone", "moment", "underscore", "jquery", "tpl!./article-template.tp
             //  _this.render();
             // });
 
+
           fetchAll: function(){
             var that = this;
 
@@ -71,46 +72,11 @@ define(["backbone", "moment", "underscore", "jquery", "tpl!./article-template.tp
               that.myArticles = articleData[0]
 
               that.render();
-
-              // //match posts from both API
-              // _.each( x, function(buzz, index){
-              //   _.each( y, function(mock, index){
-              //     if( buzz.uid == mock.id ){
-              //       console.log(buzz.post_title);
-              //       console.log((mock.facebook.shares).toLocaleString());
-              //       console.log((mock.facebook.comments).toLocaleString());
-              //       console.log((mock.facebook.shares + mock.facebook.comments).toLocaleString());
-              //       console.log((mock.overall.shares).toLocaleString());
-              //       console.log(moment(mock.updated_at).format('MMMM Do, h:mm a'));
-              //     }
-              //   });
-              // });
               }); //ends both checks for AJAX calls
 
-            // function fetchMyBuzzInfo(){
-            //   return $.ajax({
-            //     url: 'http://buzz.viddsee.com/api/buzz/v1/posts',
-            //     data: {
-            //       //current_page: event.target.innerHTML,
-            //       //total: 2180,
-            //       offset: ((event.target.innerHTML) -1) *10 +1,
-            //       per_page: 10
-            //     },
-            //     error: function(){
-            //       console.log("error!");
-            //     },
-            //     //dataType: 'jsonp',
-            //     success: function(data){
-            //       console.log('successful!');
-            //       //return (this.url);
-            //     },
-            //     type: 'GET'
-            //   });
-            // }
-
             function fetchMyBuzzInfo(){ //AJAX call for Buzz Viddsee
-                var PER_PAGE = 10;
-                var OFFSET = ( $(event.target).data('value') -1) *10 +1;
+                var PER_PAGE = 5;
+                var OFFSET = ( $(event.target).data('value') -1) *PER_PAGE +1;
                 var paginatedURL = 'http://buzz.viddsee.com/api/buzz/v1/posts?offset=' + OFFSET + '&per_page=' + PER_PAGE; //change buzz collection's URL
                 console.log(paginatedURL);
                 return $.ajax({
@@ -118,6 +84,8 @@ define(["backbone", "moment", "underscore", "jquery", "tpl!./article-template.tp
                   data: {
                     format: 'json'
                   },
+                  //current_page: event.target.innerHTML,
+                  //total: 2180,
                   error: function(){
                     console.log("error!");
                   },
