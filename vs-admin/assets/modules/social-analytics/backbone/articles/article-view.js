@@ -11,6 +11,8 @@ define(["backbone", "moment", "underscore", "jquery", "tpl!./article-template.tp
           template: tpl,
 
           initialize: function(){
+            this.myArticles = new Articles;
+            this.myBuzzInfo = new buzzInfo;
             this.render;
             this.bindEvents();
           },
@@ -18,7 +20,7 @@ define(["backbone", "moment", "underscore", "jquery", "tpl!./article-template.tp
           render: function(myArticles, myBuzzInfo, moment){
             this.$el.html(this.template({
               myArticles: this.myArticles,
-              myBuzzInfo: this.myBuzzInfo,
+              myBuzzInfo: this.myBuzzInfo
               moment: moment
             } ));
             return this;
@@ -39,7 +41,6 @@ define(["backbone", "moment", "underscore", "jquery", "tpl!./article-template.tp
           },
 
           setSelectedPaginatedPage: function($el){
-            console.log($el);
             $('.paginated-page.selected').removeClass('selected');
             $el.addClass('selected'); //DO: have to write a CSS class that makes a page button active!!
           },

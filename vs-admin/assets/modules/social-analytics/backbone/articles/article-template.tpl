@@ -53,21 +53,20 @@
 
             <tbody id="social-analytics-results" class="js-analytics-grid">
 
-              <% _.each( myBuzzInfo, function(buzz, index){ %>
-                <% _.each( myArticles, function(mock, index){ %>
-                  <% if( buzz.uid == mock.id ){ %>
+              <% _.each((myBuzzInfo.toJSON()), function(post, index){ %>
+
+                <% if(typeof myArticles.get(post.uid) != 'undefined'){ %>
                   <tr>
-                    <td><%= buzz.post_title %></td>
-                    <td><%= (mock.facebook.shares).toLocaleString() %></td>
-                    <td><%= (mock.facebook.comments).toLocaleString() %></td>
-                    <td><%= (mock.facebook.shares + mock.facebook.comments).toLocaleString() %></td>
-                    <td><%= (mock.overall.shares).toLocaleString() %></td>
-                    <td><%= mock.updated_at %></td>
-                    <!-- <td><#%= moment(mock.updated_at).format('MMMM Do, h:mm a') #%></td> -->
+                    <td><%= post.post_title %></td>
+                    <td><%= (myArticles.get(post.uid).attributes.facebook.shares).toLocaleString() %></td>
+                    <td><%= (myArticles.get(post.uid).attributes.facebook.comments).toLocaleString() %></td>
+                    <td><%= (myArticles.get(post.uid).attributes.facebook.shares + myArticles.get(post.uid).attributes.facebook.comments).toLocaleString() %></td>
+                    <td><%= (myArticles.get(post.uid).attributes.overall.shares).toLocaleString() %></td>
+                    <td><%= moment(myArticles.get(post.uid).attributes.updated_at).format('MMMM Do, h:mm a') %></td>
                   </tr>
-                  <% } %>
-                <% }); %>
-              <% }); %>
+                <% } %>
+
+              <% }) %>
 
             </tbody>
 
