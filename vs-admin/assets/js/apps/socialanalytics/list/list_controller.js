@@ -16,14 +16,7 @@ define(["app","moment",
                   var buzzInfo = new BuzzInfo();
                   var view = new ArticleView();
 
-                  //when fetched from both Mock and Buzz, pass both collections to view
-                  $.when(
-                    myArticles.fetch(),
-                    buzzInfo.fetch()
-                  ).then(function(){
-                    view.render(myArticles, buzzInfo, moment);
-                  });
-
+                  view.fetchAll(0);
                 }
 
             };  // List.Controller
